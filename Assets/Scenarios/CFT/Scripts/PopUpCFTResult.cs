@@ -45,7 +45,7 @@ public class PopUpCFTResult : PopUp
         float max = Mathf.Max(a, Mathf.Max(b, c));
         float range = 1f / (max - min);
 
-        float speed = .3f * max;
+        float speed = .45f * max;
         while (t < max)
         {
             t += Time.deltaTime * speed;

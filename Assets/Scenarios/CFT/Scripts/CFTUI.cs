@@ -24,7 +24,6 @@ public class CFTUI : GameUI
     
     
     private int phase;
-    
     private Image[][] sprites;
     private SuckButton[] buttons;
     private float[] stateAlphas;
@@ -106,7 +105,7 @@ public class CFTUI : GameUI
                                     default:
                                         phase = 0;
                                         game.StartFresh();
-                                        ShowIt();
+                                        ShowIt(1);
                                         break;
                             
                                     case 1:
@@ -135,7 +134,7 @@ public class CFTUI : GameUI
                     CFT_Marker.DisableInfo();
                     phase = 0;
                     game.StartFresh();
-                    ShowIt();
+                    ShowIt(1);
                 }
             });
 
