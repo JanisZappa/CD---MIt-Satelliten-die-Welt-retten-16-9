@@ -92,7 +92,7 @@ public class CFTUI : GameUI
                             if (startObject.activeInHierarchy)
                             {
                                 startObject.SetActive(false);
-                                ShowIt(0);
+                                ShowIt(1);
                             }
                         }
                             break;
