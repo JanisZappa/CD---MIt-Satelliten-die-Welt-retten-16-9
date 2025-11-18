@@ -57,11 +57,12 @@
 
             float4 frag (v2f i) : SV_Target
             {
-                float4 colA = tex2D(_VideoA, i.uv);
+                float4 colA = tex2D(_VideoA, i.uv) * lerp(1, .25, VideoMask);
                 float4 colB = tex2D(_VideoB, i.uv);
                 
                 float2 wP    = window / 9.0 + .5;
                 float offset = rectangle((i.uv - wP) , float2(.135, .135)) - .02;
+                      offset = rectangle((i.uv - wP) , float2(.135, .135) * 1.15) - .02;
                 float      l = (1 - saturate(offset * 1000)) * VideoMask;
                 
                 return float4(lerp(colA, colB, l).xyz, GameVis);

@@ -10,6 +10,7 @@ public class CFTUI : GameUI
     public SuckButton x, next, back, s1, s2;
 
     [Space] 
+    public GameObject startObject;
     public Image step1;
     public Sprite[] step1Sprites;
     
@@ -63,7 +64,8 @@ public class CFTUI : GameUI
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].SetActive(true);
             
-            ShowIt();
+            startObject.SetActive(true);
+            //ShowIt();
 
             x.onPointerDown.AddListener(() =>
             {
@@ -82,33 +84,47 @@ public class CFTUI : GameUI
 
             next.onPointerDown.AddListener(() =>
             {
-                if (SplitAnim.GameView && !PopUpManager.ShowingPanel && phase == 1)
-                {
-                    CFT_Marker.DisableInfo();
-                    PopUpManager.Show(b =>
+                if (SplitAnim.GameView && !PopUpManager.ShowingPanel)
+                    switch (phase)
                     {
-                        switch (b)
+                        case 0:
                         {
-                            default:
-                                phase = 0;
-                                game.StartFresh();
-                                ShowIt();
-                                break;
-                            
-                            case 1:
-                                SplitAnim.CloseGame();
-                                break;
-                            
-                            case 2:
-                            case 3:
-                            case 4:
-                                Scenario = b - 2;
-                                step2.sprite = step2Sprites[LangScen];
-                                game.ShowVideo(Scenario);
-                                break;
+                            if (startObject.activeInHierarchy)
+                            {
+                                startObject.SetActive(false);
+                                ShowIt(0);
+                            }
                         }
-                    }, 25);
-                }
+                            break;
+                        case 1:
+                        {
+                            CFT_Marker.DisableInfo();
+                            PopUpManager.Show(b =>
+                            {
+                                switch (b)
+                                {
+                                    default:
+                                        phase = 0;
+                                        game.StartFresh();
+                                        ShowIt();
+                                        break;
+                            
+                                    case 1:
+                                        SplitAnim.CloseGame();
+                                        break;
+                            
+                                    case 2:
+                                    case 3:
+                                    case 4:
+                                        Scenario = b - 2;
+                                        step2.sprite = step2Sprites[LangScen];
+                                        game.ShowVideo(Scenario);
+                                        break;
+                                }
+                            }, 25);
+                        }
+                            break;
+                    }
             });
 
             
@@ -217,8 +233,6 @@ public class CFTUI : GameUI
                 for (int i = 0; i < mC; i++)
                     markers[i].MarkerUpdate(aP, markerSprites);
             }
-
-            
         }
         
         for (int i = 0; i < 2; i++)
@@ -241,6 +255,13 @@ public class CFTUI : GameUI
                 
                 case 1:
                     ShowResultPopUp();
+                    break;
+                case 2:
+                    //Debug.Log("Yo");
+                    phase = 1;
+                    Scenario = PopUpCFTQuiz.SelectedScenario;
+                    step2.sprite = step2Sprites[LangScen];
+                    game.ShowVideo(Scenario);
                     break;
             }
         }, 23, wT);

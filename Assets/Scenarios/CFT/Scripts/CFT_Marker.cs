@@ -51,7 +51,7 @@ public class CFT_Marker : MonoBehaviour
 
         Vector3 d = aP - mP;
         float dist = Mathf.Max(Mathf.Abs(d.x), Mathf.Abs(d.y));
-        ready = dist <= 300;
+        ready = dist <= 300 * 1.15f;
         image.sprite = ms[ready? 1 : 0];
         image.color = Color.white.A(image.color.a);
 

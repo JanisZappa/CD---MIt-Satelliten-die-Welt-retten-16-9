@@ -15,7 +15,7 @@ public class PopUp : MonoBehaviour
         gameObject.SetActive(true);
         
              sprites = transform.GetChild(0).gameObject;
-        panelButtons = transform.GetComponentsInChildren<SuckButton>();
+        panelButtons = transform.GetComponentsInChildren<SuckButton>(true);
         
         ButtonInit();
         ShowPopup();
