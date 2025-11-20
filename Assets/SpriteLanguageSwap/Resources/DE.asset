@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DE
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 7e7d43539f1dc274290c05fd178f60b7, type: 3}
   - {fileID: 21300000, guid: 1ea99fc7fce19ea4eb410de108d1867c, type: 3}
   - {fileID: 21300000, guid: daccd31cda94f424d9c84b693a11c24f, type: 3}
   - {fileID: 21300000, guid: aca98af4f8fe1014ea5946d2ae11b5e4, type: 3}
@@ -61,6 +60,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 98f98ce1abb43bb40b7f7dc7672037bb, type: 3}
   - {fileID: 21300000, guid: 7cdd09249cc2dda419c4ab240d66ebf1, type: 3}
   - {fileID: 21300000, guid: daccd31cda94f424d9c84b693a11c24f, type: 3}
+  - {fileID: 21300000, guid: 05b987e3cd53927408ca5fef3a4d86e2, type: 3}
   - {fileID: 21300000, guid: 85984783a88555b40b3030f12840f271, type: 3}
   - {fileID: 21300000, guid: 71b31a620fa84ea4898a2a67cbf6d0f6, type: 3}
   - {fileID: 21300000, guid: 9f444d4df0a73bc45adbd2319b8e1113, type: 3}
@@ -95,6 +95,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: af5ffba65876c5649ba8a842f5c335cf, type: 3}
   - {fileID: 21300000, guid: 031ef5ddf83f988488646bc5f970c943, type: 3}
   - {fileID: 21300000, guid: 5cff5d4542ffbe449961eb1219fbda95, type: 3}
+  - {fileID: 21300000, guid: 7e7d43539f1dc274290c05fd178f60b7, type: 3}
   - {fileID: 21300000, guid: 9ffe0008b7a36734aa4945619c4fc48c, type: 3}
   - {fileID: 21300000, guid: 1137d8d2fd6ac214cbb5244f31670eec, type: 3}
   - {fileID: 21300000, guid: 1a03f78e42acfb541afe0c06c3032aa7, type: 3}
